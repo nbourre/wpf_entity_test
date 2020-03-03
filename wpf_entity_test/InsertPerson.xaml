@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:wpf_entity_test"
         mc:Ignorable="d"
-        Title="Ajouter une personne" MinHeight="130" MinWidth="250">
+        DataContext="{Binding RelativeSource={RelativeSource self}}"
+        Title="Personne : Ajout" Height="150" Width="250">
     <Grid Margin="6">
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
@@ -17,19 +18,19 @@
             <RowDefinition Height="Auto" MinHeight="25"/>
             <RowDefinition Height="Auto" MinHeight="25"/>
         </Grid.RowDefinitions>
+        
         <TextBlock Grid.Row="0" Text="Nom de famille :" VerticalAlignment="Center"/>
         <TextBlock Grid.Row="1" Text="Prénom :" VerticalAlignment="Center"/>
         <TextBlock Grid.Row="2" Text="Téléphone :" VerticalAlignment="Center"/>
-        <TextBox Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Text="{Binding LastName}"/>
-        <TextBox Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Text="{Binding FirstName}"/>
-        <TextBox Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Text="{Binding Phone}"/>
+        <TextBox Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Text="{Binding CurrentPerson.LastName}"/>
+        <TextBox Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Text="{Binding CurrentPerson.FirstName}"/>
+        <TextBox Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Text="{Binding CurrentPerson.Phone}"/>
 
         <StackPanel Grid.Row="3" Grid.ColumnSpan="2" HorizontalAlignment="Right" 
                     Orientation="Horizontal" Margin="3">
-            <Button Content="Ajouter" Margin="3 0"/>
+            <Button Content="Ajouter" Margin="3 0" Click="Insert_Click"/>
             <Button Content="Annuler" Margin="3 0"/>
         </StackPanel>
 
     </Grid>
-    
 </Window>

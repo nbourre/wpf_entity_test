@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:wpf_entity_test"
         mc:Ignorable="d"
+        DataContext="{Binding RelativeSource={RelativeSource self}}"
         Title="MainWindow" Height="450" Width="800">
     <DockPanel>
         <Menu DockPanel.Dock="Top">
@@ -15,10 +16,10 @@
                 <MenuItem Header="_Insérer" Click="Insert_Click"/>
             </MenuItem>
         </Menu>
-        <DataGrid AutoGenerateColumns="False" ColumnWidth="*">
+        <DataGrid AutoGenerateColumns="False" ColumnWidth="*" ItemsSource="{Binding People}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Nom de famille" Binding="{Binding LastName}"/>
-                <DataGridTextColumn Header="Prénom" Binding="{Binding Prenom}"/>
+                <DataGridTextColumn Header="Prénom" Binding="{Binding FirstName}"/>
                 <DataGridTextColumn Header="Téléphone" Binding="{Binding Phone}"/>
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.HeaderTemplate>

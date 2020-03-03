@@ -15,34 +15,13 @@ using System.Windows.Shapes;
 namespace wpf_entity_test
 {
     /// <summary>
-    /// Interaction logic for InsertPerson.xaml
+    /// Interaction logic for BaseWindow.xaml
     /// </summary>
-    public partial class InsertPerson : Window, INotifyPropertyChanged
+    public partial class BaseWindow : Window, INotifyPropertyChanged
     {
-        PhoneBookContext _db = new PhoneBookContext();
-        private Person currentPerson;
-
-        public Person CurrentPerson { 
-            get => currentPerson;
-            set { 
-                currentPerson = value;
-                OnPropertyChanged();
-            }
-        }
-
-        public InsertPerson()
+        public BaseWindow()
         {
             InitializeComponent();
-            CurrentPerson = new Person();
-        }
-
-        private void Insert_Click(object sender, RoutedEventArgs e)
-        {
-            _db.People.Add(CurrentPerson);
-            _db.SaveChanges();
-
-            this.DialogResult = true;
-            this.Hide();
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
