@@ -7,6 +7,14 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_Fichier"/>
+            <MenuItem Header="Édition"/>
+            <MenuItem Header="Affichage"/>
+            <MenuItem Header="En_registrement">
+                <MenuItem Header="_Insérer" Click="Insert_Click"/>
+            </MenuItem>
+        </Menu>
         <DataGrid AutoGenerateColumns="False" ColumnWidth="*">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Nom de famille" Binding="{Binding LastName}"/>
@@ -21,7 +29,6 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
-                                <Button Content="Insert" />
                                 <Button Content="Update" />
                                 <Button Content="Delete" />
                             </StackPanel>

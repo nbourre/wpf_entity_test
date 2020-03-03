@@ -11,5 +11,10 @@ namespace wpf_entity_test
         {
             InitializeComponent();
         }
+
+        private void Insert_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
